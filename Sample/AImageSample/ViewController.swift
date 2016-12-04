@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         imageview.APlay();
         
     }
+    
     func demoApng() {
          let imageData = try? Data(contentsOf: Bundle.main.url(forResource: "test", withExtension: "apng")!)
         
