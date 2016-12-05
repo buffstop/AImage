@@ -10,6 +10,7 @@ import ImageIO
 import UIKit
 let _imageviewStorageKey = malloc(8)
 let defaultMemoryLimit = 20
+
 let shouldCacheImmediatelyOptions = [kCGImageSourceShouldCacheImmediately as String : true as NSNumber] as CFDictionary
 
 public extension UIImageView{
@@ -26,7 +27,7 @@ public extension UIImageView{
         self.m_!.displayOrderIndex = 0
         self.m_!.needToPlay = false;
         self.m_!.timer = nil;
-        self.m_!.currentImage = UIImage(cgImage: CGImageSourceCreateImageAtIndex(self.getAImage().getImageSource(),0,nil)!)
+        self.m_!.currentImage = UIImage(cgImage: CGImageSourceCreateImageAtIndex(self.getAImage().getImageSource(), 0, nil)!)
         if (self.getAImage().getImageSize()>=MemoryLimit_MB) {
             self.m_!.timer = CADisplayLink(target: self, selector: #selector(UIImageView.updateFrameWithoutCache))
         } else {
