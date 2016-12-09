@@ -42,11 +42,11 @@ public extension UIImageView{
     }
     
     
-    public func APlay() {
+    public func aPlay() {
         self.m_!.needToPlay = true;
     }
     
-    public func AStop() {
+    public func aStop() {
         self.m_!.needToPlay = false;
     }
     
