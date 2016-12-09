@@ -27,10 +27,10 @@ class ViewController: UIViewController {
         
         let image = UIImage(aImageData: imageData!)
         
-        let imageview = UIImageView(AImage: image)
+        let imageview = UIImageView(aImage: image)
         imageview.frame = CGRect(x: 0.0, y: 50.0, width: 380.0, height: 212.0)
         view.addSubview(imageview)
-        imageview.APlay();
+        imageview.aPlay();
         
     }
     
@@ -38,10 +38,10 @@ class ViewController: UIViewController {
          let imageData = try? Data(contentsOf: Bundle.main.url(forResource: "test", withExtension: "apng")!)
         
         let image = UIImage(aImageData: imageData!)
-        let imageview = UIImageView(AImage: image)
+        let imageview = UIImageView(aImage: image)
         imageview.frame = CGRect(x: 7.0, y: 50.0, width: 380.0, height: 212.0)
         view.addSubview(imageview)
-        imageview.APlay();
+        imageview.aPlay();
     }
     
     override var prefersStatusBarHidden : Bool {

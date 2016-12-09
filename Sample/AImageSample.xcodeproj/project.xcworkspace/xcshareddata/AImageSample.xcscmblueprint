@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DE590B3A882C6B1907DF9B65F82AB8711EDF3435",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DE590B3A882C6B1907DF9B65F82AB8711EDF3435" : 9223372036854775807,
+    "3B4F4903EBF45170A221E4DF953955AEA87B220E" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DC52B926-3303-4EEE-9B9E-6DEAB8F59DD5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DE590B3A882C6B1907DF9B65F82AB8711EDF3435" : "AImage\/",
+    "3B4F4903EBF45170A221E4DF953955AEA87B220E" : "..\/.."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AImageSample",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Sample\/AImageSample.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.com:StickerBuff\/sticker-buff-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3B4F4903EBF45170A221E4DF953955AEA87B220E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/buffstop\/AImage.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DE590B3A882C6B1907DF9B65F82AB8711EDF3435"
+    }
+  ]
+}
