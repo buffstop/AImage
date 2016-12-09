@@ -15,20 +15,20 @@ let shouldCacheImmediatelyOptions = [kCGImageSourceShouldCacheImmediately as Str
 
 public extension UIImageView{
     
-    public convenience init(AImage:UIImage, MemoryLimit_MB:Int = defaultMemoryLimit) {
+    public convenience init(aImage:UIImage, memoryLimit:Int = defaultMemoryLimit) {
         self.init()
-        setAImage(AImage,MemoryLimit_MB: MemoryLimit_MB)
+        setAImage(aImage,memoryLimit: memoryLimit)
     }
     
     
-    public func setAImage(_ AImage:UIImage, MemoryLimit_MB:Int = defaultMemoryLimit) {
+    public func setAImage(_ aImage:UIImage, memoryLimit:Int = defaultMemoryLimit) {
         self.m_ = imageview_storage()
-        self.m_!.aImage = AImage
+        self.m_!.aImage = aImage
         self.m_!.displayOrderIndex = 0
         self.m_!.needToPlay = false;
         self.m_!.timer = nil;
         self.m_!.currentImage = UIImage(cgImage: CGImageSourceCreateImageAtIndex(self.getAImage().getImageSource(), 0, nil)!)
-        if (self.getAImage().getImageSize()>=MemoryLimit_MB) {
+        if (self.getAImage().getImageSize() >= memoryLimit) {
             self.m_!.timer = CADisplayLink(target: self, selector: #selector(UIImageView.updateFrameWithoutCache))
         } else {
             DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {

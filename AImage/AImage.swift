@@ -38,10 +38,10 @@ let floatEps: Float = 1E-6
 let checkInternal = [60,30,20,15,12,10,6,5,4,3,2,1]
 
 let _imageStorageKey = malloc(8)
-public extension UIImage
-{
-    
-    public convenience init(aImageData: Data, clarity: Float = defaultClarity){
+
+public extension UIImage {
+
+    public convenience init(aImageData: Data, clarity: Float = defaultClarity) {
         self.init()
         add(aImage: aImageData, with: clarity)
     }
