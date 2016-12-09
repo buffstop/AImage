@@ -22,7 +22,7 @@ public extension UIImageView{
     
     
     public func setAImage(_ aImage:UIImage, memoryLimit:Int = defaultMemoryLimit) {
-        self.m_ = imageview_storage()
+        self.m_ = ImageviewStorage()
         self.m_!.aImage = aImage
         self.m_!.displayOrderIndex = 0
         self.m_!.needToPlay = false;
@@ -85,9 +85,9 @@ public extension UIImageView{
         }
     }
     
-    private var m_:imageview_storage? {
+    private var m_: ImageviewStorage? {
         get {
-            return (objc_getAssociatedObject(self, _imageviewStorageKey) as! imageview_storage)
+            return (objc_getAssociatedObject(self, _imageviewStorageKey) as! ImageviewStorage)
         }
         set {
             objc_setAssociatedObject(self, _imageviewStorageKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN);
@@ -95,7 +95,7 @@ public extension UIImageView{
     }
 }
 
-fileprivate class imageview_storage {
+fileprivate class ImageviewStorage {
     var needToPlay:Bool?
     var timer:CADisplayLink?
     var aImage:UIImage?
