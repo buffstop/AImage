@@ -127,8 +127,9 @@ public extension UIImage {
             
             var framelosecount = 0
             for j in 1..<displayPosition.count {
-                if (displayPosition[j] == displayPosition[j-1])
-                {framelosecount += 1}
+                if (displayPosition[j] == displayPosition[j-1]) {
+                    framelosecount += 1
+                }
             }
             
             if (Float(framelosecount) <= Float(displayPosition.count) * (1.0 - clarity) || i == displayRefreshDelayTime.count - 1) {

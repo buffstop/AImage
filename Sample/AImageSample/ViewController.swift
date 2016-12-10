@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         let imageview = UIImageView(aImage: image)
         imageview.frame = CGRect(x: 0.0, y: 50.0, width: 380.0, height: 212.0)
         view.addSubview(imageview)
-        imageview.aPlay();
+        imageview.aPlay()
         
     }
     
@@ -41,7 +41,8 @@ class ViewController: UIViewController {
         let imageview = UIImageView(aImage: image)
         imageview.frame = CGRect(x: 7.0, y: 50.0, width: 380.0, height: 212.0)
         view.addSubview(imageview)
-        imageview.aPlay();
+        
+        imageview.aPlay()
     }
     
     override var prefersStatusBarHidden : Bool {
