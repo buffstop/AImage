@@ -35,7 +35,8 @@ fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 let defaultClarity: Float = 0.8
 let floatEps: Float = 1E-6
-let checkInternal = [60,30,20,15,12,10,6,5,4,3,2,1]
+//let checkInternal = [60,30,20,15,12,10,6,5,4,3,2,1]
+let checkInternal = [8,6,5,4,3,2,1]
 
 let _imageStorageKey = malloc(8)
 
