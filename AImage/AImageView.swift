@@ -60,7 +60,7 @@ public extension UIImageView{
     func prepareCache() {
         self.m_!.cache = NSCache()
         for i in 0..<self.getAImage().getDisplayOrder().count {
-            let image = UIImage(cgImage: CGImageSourceCreateImageAtIndex(self.getAImage().getImageSource(),self.getAImage().getDisplayOrder()[i],shouldCacheImmediatelyOptions)!)
+            let image = UIImage(cgImage: CGImageSourceCreateImageAtIndex(self.getAImage().getImageSource(),self.getAImage().getDisplayOrder()[i], shouldCacheImmediatelyOptions)!)
             self.getImageCache().setObject(image,forKey:i as NSNumber)
         }
     }
@@ -72,7 +72,7 @@ public extension UIImageView{
             
             DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
                 self.m_!.currentImage = UIImage(cgImage: CGImageSourceCreateImageAtIndex(self.getAImage().getImageSource(),self.getAImage().getDisplayOrder()[self.getDisplayOrderIndex()],shouldCacheImmediatelyOptions)!)
-                self.m_!.displayOrderIndex = (self.getDisplayOrderIndex()+1)%self.getAImage().getImageNumber()
+                self.m_!.displayOrderIndex = (self.getDisplayOrderIndex() + 1 ) % self.getAImage().getImageNumber()
             }
         }
     }
@@ -81,7 +81,7 @@ public extension UIImageView{
     func updateFrameWithCache() {
         if(self.getPlayJudge() == true){
             self.image = self.getImageCache().object(forKey: self.getDisplayOrderIndex() as AnyObject) as? UIImage
-            self.m_!.displayOrderIndex = (self.getDisplayOrderIndex()+1)%self.getAImage().getImageNumber()
+            self.m_!.displayOrderIndex = (self.getDisplayOrderIndex() + 1 ) % self.getAImage().getImageNumber()
         }
     }
     
@@ -96,11 +96,11 @@ public extension UIImageView{
 }
 
 fileprivate class ImageviewStorage {
-    var needToPlay:Bool?
-    var timer:CADisplayLink?
-    var aImage:UIImage?
-    var displayOrderIndex:Int?
-    var currentImage:UIImage?
-    var cache:NSCache<AnyObject, AnyObject>?
+    var needToPlay: Bool?
+    var timer: CADisplayLink?
+    var aImage: UIImage?
+    var displayOrderIndex: Int?
+    var currentImage: UIImage?
+    var cache: NSCache<AnyObject, AnyObject>?
 }
 

@@ -48,7 +48,7 @@ public extension UIImage {
     }
     
     public func add(aImage data:Data, with clarity:Float = defaultClarity){
-        self.m_ = image_storage()
+        self.m_ = ImageStorage()
         m_!.imageSource = CGImageSourceCreateWithData(data as CFData, nil)
         if (clarity <= 0 || clarity > 1) {
             print("Warning.Illegal input parameter 'clarity',request >0&&<=1.Using default clarity.")
@@ -156,9 +156,9 @@ public extension UIImage {
         m_!.imageSize = Int(image.size.height * image.size.width * 4) * m_!.imageCount! / (1000 * 1000)
     }
     
-    fileprivate var m_: image_storage? {
+    fileprivate var m_: ImageStorage? {
         get {
-            return (objc_getAssociatedObject(self, _imageStorageKey) as! image_storage)
+            return (objc_getAssociatedObject(self, _imageStorageKey) as! ImageStorage)
         }
         set {
             objc_setAssociatedObject(self, _imageStorageKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN);
@@ -166,11 +166,10 @@ public extension UIImage {
     }
 }
 
-private class image_storage
-{
-    var imageSource:CGImageSource?
-    var displayRefreshFactor:Int?
-    var imageSize:Int?
-    var imageCount:Int?
-    var displayOrder:[Int]?
+private class ImageStorage {
+    var imageSource: CGImageSource?
+    var displayRefreshFactor: Int?
+    var imageSize: Int?
+    var imageCount: Int?
+    var displayOrder: [Int]?
 }
