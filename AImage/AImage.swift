@@ -83,9 +83,9 @@ public extension UIImage {
             frameProperties = imageProperties.map() {
                 unsafeBitCast(CFDictionaryGetValue($0, Unmanaged.passUnretained(kCGImagePropertyGIFDictionary).toOpaque()), to: CFDictionary.self)
             }//gif
-        } else if (CFDictionaryContainsKey(imageProperties[1],Unmanaged.passUnretained(kCGImagePropertyPNGDictionary).toOpaque())) {
+        } else if (CFDictionaryContainsKey(imageProperties[1], Unmanaged.passUnretained(kCGImagePropertyPNGDictionary).toOpaque())) {
             frameProperties = imageProperties.map() {
-                unsafeBitCast(CFDictionaryGetValue($0,Unmanaged.passUnretained(kCGImagePropertyPNGDictionary).toOpaque()),to: CFDictionary.self)
+                unsafeBitCast(CFDictionaryGetValue($0, Unmanaged.passUnretained(kCGImagePropertyPNGDictionary).toOpaque()), to: CFDictionary.self)
             }//apng
         } else {
             fatalError("Illegal image type.")
