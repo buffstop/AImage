@@ -13,20 +13,19 @@ let defaultMemoryLimit = 20
 
 let shouldCacheImmediatelyOptions = [kCGImageSourceShouldCacheImmediately as String : true as NSNumber] as CFDictionary
 
-public extension UIImageView{
+public extension UIImageView {
     
     public convenience init(aImage:UIImage, memoryLimit:Int = defaultMemoryLimit) {
         self.init()
         setAImage(aImage,memoryLimit: memoryLimit)
     }
     
-    
     public func setAImage(_ aImage:UIImage, memoryLimit:Int = defaultMemoryLimit) {
         self.m_ = ImageviewStorage()
         self.m_!.aImage = aImage
         self.m_!.displayOrderIndex = 0
-        self.m_!.needToPlay = false;
-        self.m_!.timer = nil;
+        self.m_!.needToPlay = false
+        self.m_!.timer = nil
         self.m_!.currentImage = UIImage(cgImage: CGImageSourceCreateImageAtIndex(self.getAImage().getImageSource(), 0, nil)!)
         if (self.getAImage().getImageSize() >= memoryLimit) {
             self.m_!.timer = CADisplayLink(target: self, selector: #selector(UIImageView.updateFrameWithoutCache))
@@ -40,14 +39,13 @@ public extension UIImageView{
         self.m_!.timer!.frameInterval = self.getAImage().getRefreshFactor()
         self.m_!.timer!.add(to: .main, forMode: RunLoopMode.commonModes)
     }
-    
-    
+
     public func aPlay() {
-        self.m_!.needToPlay = true;
+        self.m_!.needToPlay = true
     }
     
     public func aStop() {
-        self.m_!.needToPlay = false;
+        self.m_!.needToPlay = false
     }
     
     public func getPlayJudge() -> Bool { return m_!.needToPlay! }
@@ -90,7 +88,7 @@ public extension UIImageView{
             return (objc_getAssociatedObject(self, _imageviewStorageKey) as! ImageviewStorage)
         }
         set {
-            objc_setAssociatedObject(self, _imageviewStorageKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN);
+            objc_setAssociatedObject(self, _imageviewStorageKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
         }
     }
 }
