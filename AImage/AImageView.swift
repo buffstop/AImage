@@ -69,7 +69,9 @@ public extension UIImageView {
             self.image = self.getCurrentImage()
             
             DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
-                self.m_!.currentImage = UIImage(cgImage: CGImageSourceCreateImageAtIndex(self.getAImage().getImageSource(),self.getAImage().getDisplayOrder()[self.getDisplayOrderIndex()],shouldCacheImmediatelyOptions)!)
+                self.m_!.currentImage = UIImage(cgImage: CGImageSourceCreateImageAtIndex(self.getAImage().getImageSource(),
+                                                                                         self.getAImage().getDisplayOrder()[self.getDisplayOrderIndex()],
+                                                                                         shouldCacheImmediatelyOptions)!)
                 self.m_!.displayOrderIndex = (self.getDisplayOrderIndex() + 1 ) % self.getAImage().getImageNumber()
             }
         }
